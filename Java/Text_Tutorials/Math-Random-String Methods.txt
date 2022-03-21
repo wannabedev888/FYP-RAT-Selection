@@ -1,0 +1,21 @@
+//	  Math Class
+	  int x1 = 2;
+	  int y1 = 3;
+	  int z1 = Math.max(x1,y1);
+	  
+	  Random random = new Random();
+	  int x = random.nextInt(6)+1;
+//	  double x = random.nextDouble();
+//	  boolean x = random.nextBoolean();
+	  System.out.println(x);
+	  
+	  String name = "Bro";   // STRING METHODS
+	  boolean result = name.equalsIgnoreCase("bro");
+//	  int result = name.length();
+//	  char result = name.charAt(0);
+//	  int result = name.indexOf("o");
+//	  boolean result = name.isEmpty();
+//	  String result = name.toUpperCase();
+//	  String result = name.toLowerCase();
+//	  String result = name.trim(); //Eliminates Blank Spaces (Only keeps one space)
+//	  String result = name.replace('o', 'a');
