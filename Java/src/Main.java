@@ -20,7 +20,7 @@ public class Main {
 	  System.out.println("Helloooo!");
 	  Date x = new Date();
 	  int y = x.getHours();
-	  System.out.println(y);
+	  System.out.println(x);
 	  
 	  QLearning ql = new QLearning();
 	  State state1 = new State(ql,17,5,2);
