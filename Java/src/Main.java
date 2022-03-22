@@ -25,7 +25,7 @@ public class Main {
 	  QLearning ql = new QLearning();
 	  State state1 = new State(ql,17,5,2);
       ql.init();
-      ql.calculateQ();
+      ql.take_decision();
       ql.printQ();
       state1.getlearner().printQ();
 //      ql.printPolicy();

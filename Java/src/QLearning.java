@@ -8,6 +8,7 @@ public class QLearning {
 
     private final double alpha = 0.1; // Learning rate
     private final double epsilon = 0.5; // Exploration rate
+    private final double nbtrials = 0;
     
     private final int actionsCount = 5; //Number of states
 
@@ -74,37 +75,45 @@ public class QLearning {
     }
 
     //Exploration or exploitation
-    void calculateQ() {
-        Random rand = new Random();
-
+    void take_decision() {
+    	Random rand = new Random();
+        double y;
         for (int i = 0; i < 10; i++) { // Train cycle 10 times
             
-        	int index;
-        	double y = rand.nextDouble();
+        	y = rand.nextDouble();
         	if (y>epsilon) {
-        		System.out.println("Exploitation!");
-        		index = maxQ(Q);
-        		System.out.printf("We chose action %d \n",actions[index]);
+        		calculateQ("Exploitation");
         	}
         	else {
-        		System.out.println("Exploration!");
-        		// Pick a random action 
-                index = rand.nextInt(actions.length);
-                System.out.printf("We chose action %d ",actions[index]);
-
-                // Q(state,action)= Q(state,action) + alpha * (R(state,action) + gamma * Max(next state, all actions) - Q(state,action))
-                double q = Q[index];
-                int r = R[index];
-                System.out.printf("and it has a reward %d ",r);
-
-                double value = (1-alpha)*q + alpha * r;
-                Q[index] = value;
-                System.out.printf("the new Q value is %f \n",Q[index]);
+        		calculateQ("Exploration");
         	}
                 
         }
     }
 
+    public void calculateQ(String exp) {
+    	Random rand = new Random();
+    	System.out.println(exp);
+    	double y = rand.nextDouble();
+        int index;
+    	if (exp == "Exploitation") {
+    		index = maxQ(Q);
+    		System.out.printf("We chose action %d \n",actions[index]);
+    	}
+    	else {
+    		index = rand.nextInt(actions.length);
+            System.out.printf("We chose action %d ",actions[index]);
+
+            // Q(state,action)= Q(state,action) + alpha * (R(state,action) + gamma * Max(next state, all actions) - Q(state,action))
+            double q = Q[index];
+            int r = R[index];
+            System.out.printf("and it has a reward %d ",r);
+
+            double value = (1-alpha)*q + alpha * r;
+            Q[index] = value;
+            System.out.printf("the new Q value is %f \n",Q[index]);
+    	}
+    }
 
     // Find index of maximum Qvalue
     int maxQ(double[] matrix) {
