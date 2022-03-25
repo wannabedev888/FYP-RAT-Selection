@@ -22,8 +22,21 @@ public class Main {
 	  int y = x.getHours();
 	  System.out.println(x);
 	  
+	  int current_time = 17;
+	  int current_location = 5;
+	  int current_scenario = 2;
+	  State[] states = new State[20];
 	  QLearning ql = new QLearning();
-	  State state1 = new State(ql,17,5,2);
+	  State state1 = new State(1,ql,17,5,2);
+	  states[0] = state1;
+	  for(int i=0; i<states.length; i++) {
+		  if (states[i].gettime() == current_time && 
+			  states[i].getlocation() == current_location &&
+			  states[i].getscenario() == current_scenario) {
+			  System.out.printf("We are in state %d \n",states[i].getID());
+			  i = states.length;
+		  }
+	  }
       ql.init();
       ql.take_decision();
       ql.printQ();
