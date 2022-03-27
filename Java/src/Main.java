@@ -41,6 +41,23 @@ public class Main {
       ql.take_decision();
       ql.printQ();
       state1.getlearner().printQ();
+      
+		
+		ArrayList<State> statesss = new ArrayList<State>();
+		statesss.add(new State(2,ql,17,5,2));
+		for (State s:statesss) {
+			if (s.gettime() == current_time && 
+					  s.getlocation() == current_location &&
+					  s.getscenario() == current_scenario) {
+					  System.out.printf("We are in state %d \n",s.getID());
+				  }
+		}
+		
+		//food.set(0, "sushi");
+		//food.remove(2);
+		//food.clear();
+		
+      
 //      ql.printPolicy();
 	  
 //	  
