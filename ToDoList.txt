@@ -3,3 +3,10 @@ Cyril
 This is Cyril's Branch
 
 this is anthony
+
+Deliverables for the upcoming week or 2
+1- How to get CellID (High priority)
+	*Location if needed (Lower priority)
+2- Decision Forcing (See if doable)
+3- Threads and how to run code in the background 
+	*Finish tutorial and learn about activities and intents
