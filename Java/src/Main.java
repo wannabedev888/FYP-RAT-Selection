@@ -44,6 +44,7 @@ public class Main {
       
 		
 		ArrayList<State> statesss = new ArrayList<State>();
+		ArrayList<QLearning> algos = new ArrayList<QLearning>();
 		statesss.add(new State(2,ql,17,5,2));
 		for (State s:statesss) {
 			if (s.gettime() == current_time && 
@@ -52,6 +53,14 @@ public class Main {
 					  System.out.printf("We are in state %d \n",s.getID());
 				  }
 		}
+		
+//		ID++
+//		IDcell=getcellID()
+//		t=gethours()
+//		sc=2
+//		algos.add(new QLearning())
+//		statesss.add(new State(ID,algos[i],time,location,scenario));
+		
 		
 		//food.set(0, "sushi");
 		//food.remove(2);
