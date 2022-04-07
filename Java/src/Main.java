@@ -37,7 +37,6 @@ public class Main {
 			  i = states.length;
 		  }
 	  }
-      ql.init();
       ql.take_decision();
       ql.printQ();
       state1.getlearner().printQ();

@@ -20,7 +20,7 @@ public class QLearning {
     private double[] Q; //List of Q values
 
     //Initialize arrays R Q and Actions
-    public void init() {
+    public QLearning() {
     	R = new int[actionsCount];
     	Q = new double[actionsCount];
         actions =  new int[actionsCount];
