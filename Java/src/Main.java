@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.io.IOException;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -10,6 +11,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.util.Date;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.URL;
 
 public class Main {
 
@@ -52,6 +56,26 @@ public class Main {
 					  System.out.printf("We are in state %d \n",s.getID());
 				  }
 		}
+		
+//		Runtime runtime = Runtime.getRuntime();
+//        try {
+//            System.out.println("Start");
+//            Process ipProcess = runtime.exec("/system/bin/ping -c 3 8.8.8.8");
+//            int exitValue = ipProcess.waitFor();
+//            ipProcess.destroy();
+////        Toast.makeText(getActivity().getApplicationContext(),exitValue, Toast.LENGTH_LONG).show();
+//            System.out.println("ExitValue: "+exitValue);
+//            if(exitValue == 0){
+//                // Success
+//                System.out.println("Reachable");
+//            } else {
+//                // Failure
+//                System.out.println("Unreachable");
+//            }
+//        } catch (IOException | InterruptedException e) {
+//            e.printStackTrace();
+//            System.out.println("Error");
+//        }
 		
 //		ID++
 //		IDcell=getcellID()
