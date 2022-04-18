@@ -7,8 +7,8 @@ import java.util.Random;
 public class QLearning {
 
     private final double alpha = 0.1; // Learning rate
-    private final double epsilon = 0.5; // Exploration rate
-    private final double nbtrials = 0;
+    private double epsilon = 1; // Exploration rate
+    private double nbtrials = 0;
     
     private final int actionsCount = 5; //Number of states
 
@@ -87,8 +87,11 @@ public class QLearning {
         	else {
         		calculateQ("Exploration");
         	}
-                
+        	nbtrials++;
+        	epsilon= 1 - 1/(1+Math.exp((-nbtrials+7)/2));
+            System.out.println("EPSILON: "+ epsilon);    
         }
+        
     }
 
     public void calculateQ(String exp) {
