@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.io.IOException;
 import java.util.Random;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -56,6 +57,39 @@ public class Main {
 					  System.out.printf("We are in state %d \n",s.getID());
 				  }
 		}
+		
+		String test ="Pinging 8.8.8.8 with 32 bytes of data:\r\n"
+				+ "Reply from 8.8.8.8: bytes=32 time=73ms TTL=252\r\n"
+				+ "Reply from 8.8.8.8: bytes=32 time=96ms TTL=252\r\n"
+				+ "Reply from 8.8.8.8: bytes=32 time=72ms TTL=252\r\n"
+				+ "Reply from 8.8.8.8: bytes=32 time=74ms TTL=252\r\n"
+				+ "\r\n"
+				+ "Ping statistics for 8.8.8.8:\r\n"
+				+ "    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\r\n"
+				+ "Approximate round trip times in milli-seconds:\r\n"
+				+ "    Minimum = 72ms, Maximum = 96ms, Average = 78ms";
+		
+//		String[] test2=test.split("\n");
+//		for (String s: test2) {
+//			System.out.println(s);
+//		}
+		
+//		test2=test2[test2.length-1].split(" ");
+//		for (String s: test2) {
+//			if (s.contains("ms")){
+//				System.out.println(Integer.parseInt(s.split("ms")[0])+2);
+//			}
+//		}
+		
+		double[] lats= {136, 184, 115, 148, 125};
+//		int i =0;
+		double k=0;
+		for (int i=1;i<lats.length;i++) {
+			k=k+Math.abs(lats[i]-lats[i-1]);
+		}
+		k=k/(lats.length-1);
+		System.out.println(k);
+		
 		
 //		Runtime runtime = Runtime.getRuntime();
 //        try {
