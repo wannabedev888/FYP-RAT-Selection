@@ -82,7 +82,6 @@ public class Main {
 //		}
 		
 		double[] lats= {136, 184, 115, 148, 125};
-//		int i =0;
 		double k=0;
 		for (int i=1;i<lats.length;i++) {
 			k=k+Math.abs(lats[i]-lats[i-1]);
